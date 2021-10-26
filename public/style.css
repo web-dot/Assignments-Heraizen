@@ -1,7 +1,7 @@
 .header
 {
-  background: rgb(0, 84, 180);
-  padding: 30px;
+  background: rgb(201, 201, 201);
+  padding: 10px;
   text-align: center;
   color: white;
 }
@@ -18,7 +18,8 @@
 .navbar
 {
  overflow: hidden;
- background-color: #333; 
+ background-color: rgb(255, 255, 255); 
+ box-shadow: 0 4px 10px 0 #e0e0e0;
 }
 .navbar
 {
@@ -28,7 +29,7 @@
 {
   float: left;
   display: block;
-  color: white;
+  color: rgb(150, 150, 150);
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;

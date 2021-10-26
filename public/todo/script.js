@@ -3,26 +3,11 @@
         const form = document.querySelector('form');
         const ul = document.querySelector('ul');
         const input = document.getElementById('taskInpt');
+
         let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')):[];
 
         localStorage.setItem('items', JSON.stringify(itemsArray));
         const data = JSON.parse(localStorage.getItem('items'));
-
-        /*
-        let createDeleteBtn = function(){
-            var deleteButton = document.createElement('button');
-            deleteButton.textContent = 'delete';
-            deleteButton.className = 'deleteBtn';
-            return deleteButton;
-        }
-
-        let createCompletedBtn = function(){
-            var completedButton = document.createElement('button');
-            completedButton.textContent = 'done';
-            completedButton.className = 'completedBtn';
-            return completedButton;
-        }
-        */
 
         let createBtn = (className, text) => {
             var deleteButton = document.createElement('button');
@@ -30,9 +15,6 @@
             deleteButton.className = className;
             return deleteButton;
         }
-
-
-
 
         const liMaker = text => {
             const li = document.createElement('li');
@@ -68,6 +50,9 @@
             if(elementClicked.className === 'deleteBtn'){
                 remove(elementClicked.parentNode);
 
+
+
+
                 //remove from localstorage
                 for(let i=0; i<itemsArray.length; i++){
                     if(elementClicked.parentNode.className === itemsArray[i]){
@@ -97,4 +82,4 @@
         }
 
 
-            setUpEventListener();
+        setUpEventListener();
