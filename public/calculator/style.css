@@ -1,0 +1,94 @@
+
+@import url('http://fonts.cdnfonts.com/css/led-digital-7');
+.container{
+    display: grid;
+    grid-template-columns: 0fr 2fr 0fr;
+    gap: 20px;
+}
+.side{
+    background-color: black;
+}
+.app{
+    background-color: rgb(14, 22, 28);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0 #e0e0e0;
+}
+.display{
+    height: 100px;
+    border: 1px solid rgb(55, 55, 55);
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+}
+.keys{
+    /* height: 350px; */
+    background-color: rgb(14, 14, 14);
+    margin: 10px;
+    border-radius: 5px;
+    color: #e0e0e0;
+}
+/* .table{
+    border: 1px solid red;
+} */
+td{
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.17), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.number{
+    list-style: none;
+    float: left;
+    direction:ltr;
+    font-size: 30px;
+    color: rgb(0, 255, 51);
+    /* font-family: 'LED Digital 7'; */
+}
+.numbers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.tablerow1,.tablerow2,.operations{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 450px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.2fr 2fr 0.2fr;
+        gap: 20px;
+    }
+    td{
+        width: 50px;
+        height: 30px;
+        
+    }
+}
+@media (min-width: 600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        gap: 20px;
+    }
+    td{
+        width: 70px;
+        height: 30px;
+        
+    }
+}
