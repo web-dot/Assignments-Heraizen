@@ -1,53 +1,29 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>
-        Employee Registration App
-    </title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <table>
-        <tr>
-            <td>
-                <table class="list" id="employeeList">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Salary</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
+    <header>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+       <link rel="stylesheet" href="style.css">
+    </header>
+    <body>
+        <section class="container">
+            <section class="table">
+                <table id="nameTable">
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Employee Email</th>
+                        <th>Employee Salary</th>
+                        <th>Delete/Update</th>
+                    </tr>
                 </table>
-            </td>
-            <td>
-                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                    <div>
-                        <label>Full Name*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                        <input type="text" name="fullName" id="fullName">
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="text" name="email" id="email">
-                    </div>
-                    <div>
-                        <label>Salary</label>
-                        <input type="text" name="salary" id="salary">
-                    </div>
-                    <div  class="form-action-buttons">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </td>
-        </tr>
-    </table>
-    <script src="script.js"></script>
-</body>
-
+            </section>
+            <form class="form">
+                Name<input type="text" id="personName" name="name"><br/>
+                Email<input type="text" id="personEmail" name="email"><br/>
+                Salary<input type="text" id="personSalary" name="salary"><br/>
+                <input type="submit" value="submit">
+            </form>
+        </section>
+        <script src="   script.js"></script>
+    </body>
 </html>
