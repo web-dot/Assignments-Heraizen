@@ -1,24 +1,32 @@
 var selectedRow = null
 
+let empArray = localStorage.getItem('emps') ? JSON.parse(localStorage.getItem('emps')):[];
+
 function onFormSubmit() {
     if (validate()) {
-        var formData = readFormData();
+        var Employee = readFormData();
+        console.log(Employee);
         if (selectedRow == null){
-            insertNewRecord(formData);
+            insertNewRecord(Employee);
+            empArray.push(Employee);
+            localStorage.setItem('emps', JSON.stringify(empArray));
+            console.log(empArray);
         }
         else
-            updateRecord(formData);
+            updateRecord(Employee);
         resetForm();
     }
 }
 
+
+
 function readFormData() {
-    var formData = {};  //creating empty formData object literal
-    //setting formData values using bracket notation 
-    formData["fullName"] = document.getElementById("fullName").value;
-    formData["email"] = document.getElementById("email").value;
-    formData["salary"] = document.getElementById("salary").value;
-    return formData;
+    var Employee = {};  //creating empty Employee object literal
+    //setting Employee values using bracket notation 
+    Employee["fullName"] = document.getElementById("fullName").value;
+    Employee["email"] = document.getElementById("email").value;
+    Employee["salary"] = document.getElementById("salary").value;
+    return Employee;
 }
 
 function insertNewRecord(data) {
@@ -61,19 +69,36 @@ function onEdit(td) {
     document.getElementById("email").value = selectedRow.cells[1].innerHTML;
     document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
 }
-function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.fullName;
-    selectedRow.cells[1].innerHTML = formData.email;
-    selectedRow.cells[2].innerHTML = formData.salary;
+function updateRecord(Employee) {
+    selectedRow.cells[0].innerHTML = Employee.fullName;
+    selectedRow.cells[1].innerHTML = Employee.email;
+    selectedRow.cells[2].innerHTML = Employee.salary;
 }
+
+
+  
+
+
 
 function onDelete(td) {
     if (confirm('Are you sure to delete this record ?')) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
+        console.log(row.firstChild.innerHTML);
+        var empName = row.firstChild.innerHTML;
+        for(var i=0; i<empArray.length; i++){
+            if(empArray[i]["fullName"] === empName){
+                empArray.splice(i, 1);
+            }
+        }
+        localStorage.setItem('emps', JSON.stringify(empArray));
+        console.log(empArray);  
         resetForm();
     }
 }
+
+
+
 function validate() {
     isValid = true;
     if (document.getElementById("fullName").value == "") {
