@@ -33,11 +33,10 @@ displayLS(empArr);
 var selectedRow = null;
 
 form.addEventListener('submit', function onSubmit(e){
+    //debugger;
     e.preventDefault();
     var Employee = getObject();
     if(selectedRow == null){
-        //getting Employee object
-        //var Employee = getObject();
         console.log(Employee);
         //1.1.3]put in arr
         empArr.push(Employee);
@@ -118,10 +117,7 @@ var setEventListener = function(){
                 document.getElementById('personEmail').value = selectedRow.cells[1].innerHTML;
                 document.getElementById('personSalary').value = selectedRow.cells[2].innerHTML;
             });
-            //debugger;
              var Employee = getObject();
-             //update(Employee);
-            //console.log(elementClicked.className);
         }
     });
 }
