@@ -66,6 +66,10 @@
   background-color: white;
   padding: 20px;
 }
+.content{
+  text-align:left;
+  margin: 10px;
+}
 @media screen and (max-width: 700px){
   .row{
     flex-direction: column;
