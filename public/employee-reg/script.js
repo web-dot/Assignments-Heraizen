@@ -29,17 +29,38 @@ const delBtn = document.querySelector(".delBt");
 //2]display from LS
 displayLS(empArr);
 
+//selected rows set to null
+var selectedRow = null;
+
 form.addEventListener('submit', function onSubmit(e){
     e.preventDefault();
-    //getting Employee object
     var Employee = getObject();
-    console.log(Employee);
-    //1.1.3]put in arr
-    empArr.push(Employee);
-    console.log(empArr);
-    display();
-    //1.2]put in LS
-    localStorage.setItem('employees', JSON.stringify(empArr));
+    if(selectedRow == null){
+        //getting Employee object
+        //var Employee = getObject();
+        console.log(Employee);
+        //1.1.3]put in arr
+        empArr.push(Employee);
+        console.log(empArr);
+        display();
+        //1.2]put in LS
+        localStorage.setItem('employees', JSON.stringify(empArr));
+        
+    }
+    else{
+        selectedRow.cells[0].innerHTML = Employee["name"];
+        selectedRow.cells[1].innerHTML = Employee["email"];
+        selectedRow.cells[2].innerHTML = Employee["salary"];
+        for(var i=0; i<empArr.length; i++){
+            if(selectedRow.cells[0].innerHTML === empArr[i]["name"]){
+                empArr.splice(i, 1, Employee);
+                empArr.push(Employee);
+                break;
+            }
+        }
+        console.log(empArr);
+    }
+    reset();
 });
 
 //1.1.2]function to create object
@@ -69,10 +90,16 @@ function displayLS(arr){
     }
 }
 
+function reset(){
+    document.getElementById("personName").value = "";
+    document.getElementById("personEmail").value = "";
+    document.getElementById("personSalary").value = "";
+}
 
 var setEventListener = function(){
     nameTable.addEventListener('click', function(e){
         var elementClicked = e.target;
+        if(elementClicked.className === 'delBt'){
         var row = elementClicked.parentNode.parentNode;
         nameTable.deleteRow(row.rowIndex);
         var empName = row.firstChild.innerHTML;
@@ -83,6 +110,19 @@ var setEventListener = function(){
         }
         localStorage.setItem('employees', JSON.stringify(empArr));
         console.log(empArr);
+        }
+        if(elementClicked.className === 'upBt'){
+            elementClicked.addEventListener('click', function(event){
+                selectedRow = elementClicked.parentNode.parentNode;
+                document.getElementById('personName').value = selectedRow.cells[0].innerHTML;
+                document.getElementById('personEmail').value = selectedRow.cells[1].innerHTML;
+                document.getElementById('personSalary').value = selectedRow.cells[2].innerHTML;
+            });
+            //debugger;
+             var Employee = getObject();
+             //update(Employee);
+            //console.log(elementClicked.className);
+        }
     });
 }
 setEventListener();
