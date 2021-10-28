@@ -50,14 +50,16 @@ form.addEventListener('submit', function onSubmit(e){
         selectedRow.cells[0].innerHTML = Employee["name"];
         selectedRow.cells[1].innerHTML = Employee["email"];
         selectedRow.cells[2].innerHTML = Employee["salary"];
+        //update empArr
         for(var i=0; i<empArr.length; i++){
             if(selectedRow.cells[0].innerHTML === empArr[i]["name"]){
+                console.log(empArr[i]);
                 empArr.splice(i, 1, Employee);
-                empArr.push(Employee);
-                break;
             }
         }
         console.log(empArr);
+        //put back empArr in LS
+        localStorage.setItem('employees', JSON.stringify(empArr));
     }
     reset();
 });
