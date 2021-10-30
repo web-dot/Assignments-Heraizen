@@ -37,7 +37,7 @@ var apiReq = new XMLHttpRequest();
 
             var city = input.value;
             console.log(city);
-            var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=9d0924c861810e5ff8d780fa761b9f6d`;
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=9d0924c861810e5ff8d780fa761b9f6d`;
             apiReq.open("GET", url, true);
             apiReq.onload = (e) => {
                 if(apiReq.readyState === 4){
