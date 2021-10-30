@@ -21,7 +21,7 @@ sub->
 var empArr = localStorage.getItem('employees') ? JSON.parse(localStorage.getItem('employees')):[];
 
 //grab table using id
-const nameTable = document.getElementById('nameTable');
+const nameTable = document.getelementById('nameTable');
 //grab the form
 const form = document.querySelector("form");
 //grab the delete btn
@@ -32,14 +32,14 @@ displayLS(empArr);
 //selected rows set to null
 var selectedRow = null;
 
-form.addEventListener('submit', function onSubmit(e){
+form.addeventListener('submit', function onSubmit(e){
     //debugger;
     e.preventDefault();
-    var Employee = getObject();
+    var employee = getObject();
     if(selectedRow == null){
-        console.log(Employee);
+        console.log(employee);
         //1.1.3]put in arr
-        empArr.push(Employee);
+        empArr.push(employee);
         console.log(empArr);
         display();
         //1.2]put in LS
@@ -47,39 +47,39 @@ form.addEventListener('submit', function onSubmit(e){
         
     }
     else{
-        selectedRow.cells[0].innerHTML = Employee["name"];
-        selectedRow.cells[1].innerHTML = Employee["email"];
-        selectedRow.cells[2].innerHTML = Employee["salary"];
+        selectedRow.cells[0].innerHTML = employee["name"];
+        selectedRow.cells[1].innerHTML = employee["email"];
+        selectedRow.cells[2].innerHTML = employee["salary"];
         //update empArr
         for(var i=0; i<empArr.length; i++){
             if(selectedRow.cells[0].innerHTML === empArr[i]["name"]){
                 console.log(empArr[i]);
-                empArr.splice(i, 1, Employee);
+                empArr.splice(i, 1, employee);
             }
         }
         console.log(empArr);
         //put back empArr in LS
-        localStorage.setItem('employees', JSON.stringify(empArr));
+        localStorage.setItem('employees', JSON.stringify(emp));
     }
     reset();
 });
 
 //1.1.2]function to create object
 function getObject(){
-    var Employee = {};
-    Employee["name"] = document.getElementById('personName').value;
-    Employee["email"] = document.getElementById('personEmail').value;
-    Employee["salary"] = document.getElementById('personSalary').value;
-    return  Employee;
+    var employee = {};
+    employee["name"] = document.getelementById('personName').value;
+    employee["email"] = document.getelementById('personemail').value;
+    employee["salary"] = document.getelementById('personSalary').value;
+    return  employee;
 }
 
 function display(){
-        var Employee = getObject();
+        var employee = getObject();
         let content = nameTable.innerHTML;
-        content = content + '<tr><td>'+ Employee["name"]+'</td><td>'+ Employee["email"]+'</td><td>'+ Employee["salary"]+'</td><td>' + '<button class="upBt">update</button><button class="delBt">delete</button></tr>';
+        content = content + '<tr><td>'+ employee["name"]+'</td><td>'+ employee["email"]+'</td><td>'+ employee["salary"]+'</td><td>' + '<button class="upBt">update</button><button class="delBt">delete</button></tr>';
         nameTable.innerHTML = content;
         personName.value ='';
-        personEmail.value ='';
+        personemail.value ='';
         personSalary.value = '';    
 }
 
@@ -92,13 +92,13 @@ function displayLS(arr){
 }
 
 function reset(){
-    document.getElementById("personName").value = "";
-    document.getElementById("personEmail").value = "";
-    document.getElementById("personSalary").value = "";
+    document.getelementById("personName").value = "";
+    document.getelementById("personemail").value = "";
+    document.getelementById("personSalary").value = "";
 }
 
-var setEventListener = function(){
-    nameTable.addEventListener('click', function(e){
+var seteventListener = function(){
+    nameTable.addeventListener('click', function(e){
         var elementClicked = e.target;
         if(elementClicked.className === 'delBt'){
         var row = elementClicked.parentNode.parentNode;
@@ -113,16 +113,16 @@ var setEventListener = function(){
         console.log(empArr);
         }
         if(elementClicked.className === 'upBt'){
-            elementClicked.addEventListener('click', function(event){
+            elementClicked.addeventListener('click', function(event){
                 selectedRow = elementClicked.parentNode.parentNode;
-                document.getElementById('personName').value = selectedRow.cells[0].innerHTML;
-                document.getElementById('personEmail').value = selectedRow.cells[1].innerHTML;
-                document.getElementById('personSalary').value = selectedRow.cells[2].innerHTML;
+                document.getelementById('personName').value = selectedRow.cells[0].innerHTML;
+                document.getelementById('personemail').value = selectedRow.cells[1].innerHTML;
+                document.getelementById('personSalary').value = selectedRow.cells[2].innerHTML;
             });
-             var Employee = getObject();
+             var employee = getObject();
         }
     });
 }
-setEventListener();
+seteventListener();
 
 
