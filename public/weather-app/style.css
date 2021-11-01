@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Shrikhand&display=swap');
 
 /* .carousel-item{
     height: 350px;
@@ -36,52 +37,72 @@
 a{
     color: #ffff;
 }
-/* .tabsec{
-    height: 300px;
-} */
+
 .card-container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap:nowrap;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 4px 10px 0 #e0e0e0;
     margin: 50px;
-    height: 700px;
-
+    background-color: rgb(252, 236, 238);
+    border-radius: 10px;
 }
-.card,  
-.guide-text{
-    box-shadow: 0 4px 10px 0 #e0e0e0;
+.captions{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.caption{
+    width: 150px;
+    height: 100px;
+    border: 1px solid grey;
+    background-color: #ffff;
+    color: grey;
+}
+
+.image{
+     margin: 20px;
+} 
+.img-fluid{
+    border-radius: 10px;
 }
 h2{
     text-align: center;
-    color: rgb(104, 104, 104);
+    color: rgb(29, 29, 29);
     font-size: 50px;
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 .page-footer{
-    background-color: rgb(255, 225, 0);
-    height: 200px;
-    margin: 20px;
+    background-color: rgb(0, 17, 39);
     box-shadow: 0 4px 10px 0 #e0e0e0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content:space-evenly;
+    align-items:initial;
+    height: 300px;
 }
 .page-footer p{
-    color: rgb(255, 255, 255);
-    background-color: rgb(94, 94, 94);
-    width: 50%;
-    box-shadow: 0 4px 10px 0 #2e2e2e;
-    font-family: 'Shrikhand', cursive;
-    font-size: 20px;
+    color: rgba(255, 238, 0, 0.7);
+    /* background-color: rgba(1, 1, 1, 0.5); */
+    /* box-shadow: 0 2px 5px 0 #545454; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    margin: 0px;
+    text-decoration: underline;
 }
 .left,
 .right{
     width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
 }
 @media (min-width:500px) {
 .carousel-item{
