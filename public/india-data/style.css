@@ -1,0 +1,13 @@
+.col-2,
+.col-10{
+    border: 5px solid green ;
+}
+.chartcontainer{
+    width: 40%;
+    height: 30%;
+    box-shadow: 0 4px 10px 0 #e0e0e0;
+}
+.row{
+    box-shadow: 0 4px 10px 0 #e0e0e0;
+    margin-left: 20px;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <title>dataapp</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">State level Literacy Rate</h1>
+        </div>
+      </div>
+      <div class="col-md-3" >
+        <select class="form-control form-control-sm" id="graphtype">
+            <option>bar</option>
+            <option>line</option>
+            <option>pie</option>
+          </select>
+      </div>
+      <div class="row">
+        <div class="chartcontainer">
+          <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md">
+          <h3>Literacy Rate</h3>
+          <p>Literacy and level of education are basic indicators of the level of development achieved by a society. Spread of literacy is generally associated with important traits of modern civilization such as modernization, urbanization, industrialization, communication and commerce. Literacy forms an important input in overall development of individuals enabling them to comprehend their social, political and cultural environment better and respond to it appropriately. Higher levels of education and literacy lead to a greater awareness and also contributes in improvement of economic and social conditions. It acts as a catalyst for social upliftment enhancing the returns on investment made in almost every aspect of development effort, be it population control, health, hygiene, environmental degradation control, employment of weaker sections of the society.
+            According to the Census 2001, as many as 560,687,797 persons in the country are literate. Of these 336,533,716 are males and 224, 154,081 are females. While the overall literacy rate works out to be 64.8 %, the male literacy rate is 75.3% and that for females is 53.7%, showing a gap of 21.6 percentage points between the sexes at the national level. The gap is more in the rural areas. In the urban areas, higher literacy rate has been recorded both for males and females and the difference among the sexes is lower (13 percentage points ). Kerala, Mizoram, Lakshadweep, Goa and Chandigarh occupy the top five positions in literacy while Dadra & Nagar Haveli, Uttar Pradesh, Jammu & Kashmir, Arunachal Pradesh, Jharkhand, and Bihar, are at bottom.
+             The literacy rates for rural population are the highest in Kerala, followed by Lakshadweep, Mizoram, Goa, and Delhi. Fourteen (14) States / Uts have recorded less than 60 percent rural Literacy rate.</p>
+        </div>
+  </div>
+      
+    <script src="literacy.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

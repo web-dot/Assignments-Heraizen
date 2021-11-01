@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <title>dataapp</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Polluted River Stretches</h1>
+        </div>
+      </div>
+      <div class="col-md-3" >
+        <select class="form-control form-control-sm" id="graphtype">
+            <option>bar</option>
+            <option>line</option>
+            <option>pie</option>
+          </select>
+      </div>
+      <div class="row">
+        <div class="chartcontainer">
+          <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md">
+          <h3>Polluted Rivers</h3>
+          <p>Water pollution is a serious problem in India as almost
+            70 per cent of its surface water resources and a growing
+            percentage of its groundwater reserves are contaminated
+            by biological, toxic, organic, and inorganic pollutants.
+            In many cases, these sources have been rendered unsafe
+            for human consumption as well as for other activities,
+            such as irrigation and industrial needs. This shows that
+            degraded water quality can contribute to water scarcity
+            as it limits its availability for both human use and for
+            the ecosystem<br>
+            In 1995, the Central Pollution Control Board
+            (CPCB) identifi ed severely polluted stretches on 18
+            major rivers in India. Not surprisingly, a majority of
+            these stretches were found in and around large urban
+            areas. The high incidence of severe contamination near
+            urban areas indicates that the industrial and domestic sectors’ contribution to water pollution is much
+            higher than their relative importance implied in the
+            Indian economy. Agricultural activities also contribute
+            in terms of overall impact on water quality. Besides a
+            rapidly depleting groundwater table in diff erent parts,
+            the country faces another major problem on the water
+            front—groundwater contamination—a problem which
+            has aff ected as many as 19 states, including Delhi. Geogenic contaminants, including salinity, iron, fluoride,
+            and arsenic have aff ected groundwater in over 200
+            districts spread across 19 states.</p>
+        </div>
+  </div>
+      
+    <script src="pollriver.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

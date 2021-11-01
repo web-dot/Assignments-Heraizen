@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <title>dataapp</title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Solar Energy</h1>
+        </div>
+      </div>
+      <div class="col-md-3" >
+        <select class="form-control form-control-sm" id="graphtype">
+            <option>bar</option>
+            <option>line</option>
+            <option>pie</option>
+          </select>
+      </div>
+      <div class="row">
+        <div class="chartcontainer">
+          <canvas id="chart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md">
+          <h3>Increase in Solar Energy Production</h3>
+          <p>Solar power in India is a fast developing industry as part of the renewable energy in India. The country's solar installed capacity was 44.3 GW as of 31 August 2021.
+            The Indian government had an initial target of 20 GW capacity for 2022, which was achieved four years ahead of schedule. In 2015 the target was raised to 100 GW of solar capacity (including 40 GW from rooftop solar) by 2022, targeting an investment of US$100 billion. India has established nearly 42 solar parks to make land available to the promoters of solar plants. The Ministry of New and Renewable Energy had stated that a further 36.03 GW (as of January 31, 2021) of solar projects are under various stages of implementation and 23.87 GW are in the tendering process.
+            Rooftop solar power accounts for 2.1 GW, of which 70% is industrial or commercial. In addition to its large-scale grid-connected solar photovoltaic (PV) initiative, India is developing off-grid solar power for local energy needs. Solar products have increasingly helped to meet rural needs; by the end of 2015 just under one million solar lanterns were sold in the country, reducing the need for kerosene.[9] That year, 118,700 solar home lighting systems were installed and 46,655 solar street lighting installations were provided under a national program; just over 1.4 million solar cookers were distributed in India.
+        </p>
+        </div>
+  </div>
+      
+    <script src="solar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

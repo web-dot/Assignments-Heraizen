@@ -13,5 +13,10 @@ app.listen(port, function() {
     console.log(`server running at http://localhost:${port}`)
 });
 
+// app.get("/api", (req, res) => {
+//     console.log(request.body);
+//   });
+  
+
 //app configuration
 app.use(express.static(path.join(__dirname, "public")))
