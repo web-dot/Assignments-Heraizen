@@ -8,7 +8,7 @@ const countries = [{'name' : 'USA','code': 'us'},{'name' : 'india','code' : 'in'
 const catagories = ["health","technology", "sports", "general"];
 
 const form = document.querySelector("form");
-
+// const keyword = document.getElementById('keyword');
 
 getSelectCountry();
 getSelectCategory();
@@ -36,14 +36,15 @@ function getSelectCategory(){
     function getData(){
         const country = document.querySelector("#selectedCountry").value;
         const category = document.querySelector("#selectedcategory").value;
+        const keyword = document.getElementById('keyword').value;
         
-        let url = `${baseURL}?country=${country}&category=${category}&apiKey=${apiKey}`;
+        let url = `${baseURL}?country=${country}&category=${category}&q=${keyword}&apiKey=${apiKey}`;
 
         fetch(url).then(res=>res.json()).then(
             result => {
                 news = result["articles"];
                 viewNews(news);
-                console.log(news)
+                
         })
 
         // fetch(url).then(response => {

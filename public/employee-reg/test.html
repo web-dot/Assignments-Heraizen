@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+
+    
+    <script>
+
+        var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.herokuapp.com/api/ems/ - POST, PUT', 'https://lwl-ems.herokuapp.com/api/ems/(empId) - Fetch, Delete'];
+
+        var baseUrl = 'https://lwl-ems.herokuapp.com/api/ems';
+
+
+        getEmpData()
+
+        async function getEmpData(){
+            const response = await fetch(`${baseUrl}/all`);
+            const list = await response.json();
+            console.log(list);
+        }
+
+
+        async function setEmpData(){
+
+
+            const options = {
+                method: "POST",
+                Headers:{
+                    "Content-Type" : "application/json"
+                },
+                body:JSON.stringify(data)
+            }
+
+            fetch(`${baseUrl}`, options);
+        }
+
+
+    </script>
+</body>
+</html>

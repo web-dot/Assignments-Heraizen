@@ -116,8 +116,9 @@ var seteventListener = function(){
             elementClicked.addeventListener('click', function(event){
                 selectedRow = elementClicked.parentNode.parentNode;
                 document.getelementById('personName').value = selectedRow.cells[0].innerHTML;
-                document.getelementById('personemail').value = selectedRow.cells[1].innerHTML;
+                document.getelementById('personEmail').value = selectedRow.cells[1].innerHTML;
                 document.getelementById('personSalary').value = selectedRow.cells[2].innerHTML;
+
             });
              var employee = getObject();
         }
