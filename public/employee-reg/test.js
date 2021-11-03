@@ -16,9 +16,6 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
             display(list);
         }
 
-        
-        
-
         let content = nameTable.innerHTML;
         async function display(arr){
             arr.forEach(obj => {
@@ -67,7 +64,6 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
         //UPDATE
         async function updateEmp(id){
             let result = confirm("are you sure you want to update this employee?");
-
             if(confirm){
             const jsonData = input();
             const data = {
@@ -90,7 +86,6 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
         }
     }
 
-        let idEvent = 0;
         var setEventListener = () => {
             nameTable.addEventListener('click', e => {
                 var elementClicked = e.target;
@@ -135,7 +130,7 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
             else{
                 setEmpData();
             }
-            display(list);
+            location.reload();
         })
 
         setEventListener();
