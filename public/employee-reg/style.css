@@ -3,7 +3,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     grid-template-columns: 2fr 2fr ;
-    border-style: 1px solid red;
+    /* border-style: 1px solid red; */
     gap: 20px;
   }
   .form{

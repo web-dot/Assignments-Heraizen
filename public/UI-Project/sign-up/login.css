@@ -1,0 +1,34 @@
+body{
+  font-family: arial;
+  color: #333;
+  background-color:	#89ABB5;
+}
+.formbox{
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+.formbox p{
+  margin-left: 60px;
+  color: #333;
+}
+.formcontainer{
+  width: 400px;
+  margin: auto;
+}
+.navbar{
+  background-color: rgb(121, 32, 0);
+  color: #fff;
+}
+.btn{
+  background-color: rgb(91, 152, 209);
+  color: #fff;
+}
+#emailHelp,
+#passHelp{
+  opacity: 0;
+  color: rgb(121, 32, 0);
+}

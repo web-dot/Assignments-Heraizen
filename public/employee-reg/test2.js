@@ -15,7 +15,6 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
             console.log(list);
             display(list);
             data = list;
-            console.log(data);
         }
 
         let content = nameTable.innerHTML;
@@ -50,7 +49,7 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
             data = response;
             console.log(data);
             console.log("data",data);
-            content = content + '<tr><td>'+ input["id"]+'</td><td>'+ input["name"]+'</td><td>'+ input["email"]+'</td><td>'+ input["salary"]+'</td><td>' + '<button class="upBt">update</button><button class="delBt">delete</button></tr>';
+            content = content + '<tr><td>'+ input["id"]+'</td><td>'+ input["name"]+'</td><td>'+ input["email"]+'</td><td>'+ input["salary"]+'</td><td>' + '<button class="upBt">update</button><button onclick="delEmp()" class="delBt">delete</button></tr>';
             nameTable.lastChild = content;
            // console.log("data",data);
         }
@@ -58,7 +57,9 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
         //console.log("data",data);
 
         //DELETE
-        async function delEmp(empID){
+        async function delEmp(){
+            let delbtn = document.querySelector(".delBt");
+            console.log(delbtn);
             let result = confirm("are you sure you want to delete this employee?");
             if(result){
                 const options = {
@@ -140,7 +141,7 @@ var urlarr = ['https://lwl-ems.herokuapp.com/api/ems/all', 'https://lwl-ems.hero
             location.reload();
         })
 
-        setEventListener();
+        //setEventListener();
 
 
 
