@@ -1,5 +1,6 @@
 $(document).ready(function(){
     let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
+    let userscope = localStorage.getItem('scope') ? JSON.parse(localStorage.getItem('scope')):{email: "", pass: ""};
     console.log(userarr);
 
 
@@ -14,6 +15,10 @@ $(document).ready(function(){
                 document.getElementById("emailHelp").style.opacity= 0;
                 if(pass === user["pass"]){
                     alert("login successful");
+                    userscope["email"] = email;
+                    userscope["pass"] = pass;
+                    console.log(userscope); 
+                    localStorage.setItem('scope', JSON.stringify(userscope));
                     window.location.href = "landingpage.html"
                 }
                 else{

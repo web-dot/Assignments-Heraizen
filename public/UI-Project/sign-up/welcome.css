@@ -1,207 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&family=Roboto:wght@300&family=Shrikhand&display=swap');
-/* @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"; */
 
-
+.formbox p{
+  margin-left: 60px;
+  color: #333;
+}
 .navbar{
-    background-color: rgb(76, 129, 148); 
-    margin-top:40px;
-    box-shadow: 0 4px 10px 0 #e0e0e0;
-    height: 100px;
+  background-color: rgb(121, 32, 0);
+  color: #fff;
 }
-
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-} 
-body{
-  background-color: rgb(245, 245, 245);
+.navbar-nav{
+  float: right;
 }
-.titlebox{
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  -moz-box-shadow: 0 0 2px #999;
-  -webkit-box-shadow: 0 0 2px #999;
-  box-shadow: 0 0 2px #999;
-
+i,
+span{
+  color: #fff;
 }
-.title{
-  width: 200px;
-  height: 40px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  font-size: 10px;
-  color: #4d4d4d;
-
-  -moz-box-shadow: 0 0 2px #999;
-  -webkit-box-shadow: 0 0 2px #999;
-  box-shadow: 0 0 2px #999;
-}
-.title:hover{
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  background:#3D6AF2;
-}
-.titlebox h1:hover{
-  color: #ffffff;
-}
-.boxcontent{
-  margin-top: 30px;
-  display: flex; 
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-between; 
-  align-items: center;
-  width: 1000px;
-  margin: auto;
-}
-.contentbox{
-  margin-top: 40px;
-}
-.conceptgallery{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 1200px;
-  object-fit: cover;
-}
-.logogallery{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 800px;
-  object-fit: cover;
-}
-.identitygallery{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 1600px;
-  object-fit: cover;
-}
-.identity,
-.logo,
-.mockups{
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  font-size: 50px;
-  box-shadow: 0 15px 30px rgb(221, 221, 221);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.identity:hover,
-.logo:hover,
-.mockups:hover{
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    top: -5px;
-	left: -5px;
-  }
-.slides{
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
-  background-color: #ffffff;
-  font-size: 50px;
-  -moz-box-shadow: 0 0 5px #999;
-  -webkit-box-shadow: 0 0 5px #999;
-  box-shadow: 0 0 5px #999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contentbox a{
+a{
+  margin-left: 20px;
   text-decoration: none;
 }
-
-.identity:hover{
-  background:#ffc505;
-}
-.logo:hover{
-  background:#5ac846;
-}
-.mockups:hover{
-  background:#cf594e;
-}
-.contentbox a:hover{
-  color: #ffffff;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 100px;
-}
-.slides a:hover{
-  color: #00a2ff;
-}
-
-
-.myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.myImg:hover {opacity: 0.7;}
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-.modal-content{
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+img{
+  width: 90%;
+  border: 1px solid red;
 }
