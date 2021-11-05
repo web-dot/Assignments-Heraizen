@@ -47,6 +47,6 @@ $(document).ready(function(){
         thisuserlist.push(userobj);
         localStorage.setItem(userscope["email"], JSON.stringify(thisuserlist));
         content = content + `<tr><td>${item}</td><td><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>`;
-        table.innerHTML = table.innerHTML +  content;
+        table.innerHTML = content;
     })
 })
