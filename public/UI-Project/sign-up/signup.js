@@ -1,3 +1,4 @@
+let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
 const inputs = document.querySelectorAll("input");
 let dob = document.getElementById("dateofbirth").value;
 
@@ -46,6 +47,17 @@ inputs.forEach((input) => {
                 document.getElementById("rpasshelp").style.opacity= 1;
             }
         }
+        let email = "";
+        if(e.target.name == "email"){
+            email = e.target.value; 
+        }
+        console.log(email);
+        userarr.forEach(user => {
+            if(user["email"] == email){
+                document.getElementById("emailHelp").innerHTML = "this email is already registered, kindly login";
+                document.getElementById("emailHelp").style.color = "rgb(121, 32, 0)";
+            }
+        })
     })
 })
 
