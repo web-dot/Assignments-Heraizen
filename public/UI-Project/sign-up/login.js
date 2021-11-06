@@ -10,28 +10,32 @@ $(document).ready(function(){
         let email = document.getElementById("email").value;
         let pass = document.getElementById("pass").value;
         console.log(email, ":", pass);
-        userarr.forEach(user => {
-            if(user["email"] === email){
+        let mailflag = false;
+        //let passflag = false;
+        for(let i=0; i<userarr.length; i++){
+            //debugger;
+            if(userarr[i]["email"] === email && userarr[i]["pass"] === pass){
+                alert("login successfull");
+                userscope["email"] = email;
+                userscope["pass"] = pass;
+                console.log(userscope); 
+                localStorage.setItem('scope', JSON.stringify(userscope));
+                window.location.href = "landingpage.html"
+            }
+            if(userarr[i]["email"] === email){
+                mailflag = true;
                 document.getElementById("emailHelp").style.opacity= 0;
-                if(pass === user["pass"]){
-                    alert("login successful");
-                    userscope["email"] = email;
-                    userscope["pass"] = pass;
-                    console.log(userscope); 
-                    localStorage.setItem('scope', JSON.stringify(userscope));
-                    window.location.href = "landingpage.html"
-                }
-                else{
-                    alert("please check password")
+                if(userarr[i]["pass"] != pass){
+                    alert("check pass");
                     document.getElementById("passHelp").style.opacity= 1;
                 }
             }
-            else{
-                alert("email is not registered");
-                document.getElementById("emailHelp").style.opacity= 1;
-            }
-        })
+        }
+        if(mailflag == false){
+            alert("check email");
+            document.getElementById("emailHelp").style.opacity= 1;
+            document.getElementById("passHelp").style.opacity= 0;
+        }
+        
     })
-
-
 })

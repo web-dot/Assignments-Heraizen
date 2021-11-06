@@ -1,16 +1,21 @@
 $(document).ready(function(){
+
     let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
     let userscope = JSON.parse(localStorage.getItem("scope"));
 
     let table = document.querySelector("tbody");
+    let resetbtn = document.querySelector("#reset");
+
     let selectedrow = null;
 
     let thisuserlist = [];
+
     function getlocalstorage(){
         if(localStorage.getItem(userscope["email"]) != null){
             thisuserlist = JSON.parse(localStorage.getItem(userscope["email"]))
         }
     }
+
     function displayLS(arr){
         let tablecontent = table.innerHTML;
         arr.forEach(item => {
@@ -33,14 +38,9 @@ $(document).ready(function(){
         }
     })
 
-    //creating empty user obj
-    let userobj = {
-        name : "",
-        desc : ""
-    }
-
     //adding element to table
     let form = document.querySelector("form")
+
     form.addEventListener('submit', function(event){
         event.preventDefault();
         let listitem = getItem();
@@ -51,17 +51,29 @@ $(document).ready(function(){
         }
         else{
             selectedrow.cells[0].innerHTML = listitem["name"] + "-" + listitem["desc"]; 
+            for(let i=0; i<thisuserlist.length; i++){
+                if(selectedrow.cells[0].innerHTML.includes(thisuserlist[i]["name"])){
+                    thisuserlist.splice(i,1,listitem);
+                    console.log(thisuserlist);
+                }
+            }
+            localStorage.setItem(userscope["email"], JSON.stringify(thisuserlist))
         }
         //location.reload()
     })
 
+    //display function
     function display(){
         let listitem = getItem();
         let content = table.innerHTML;
         content = content + `<tr><td>${listitem["name"]}-${listitem["desc"]}</td><td><a><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td><td><a class="trash"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>`;
         table.innerHTML = content;
+        item.value = "";
+        desc.value = "";
+        location.reload();
     }
 
+    //getitem from input
     function getItem(){
         let userobj = {};
         userobj["name"] = document.getElementById("item").value,
@@ -69,16 +81,14 @@ $(document).ready(function(){
         return userobj
     }
 
+    resetbtn.addEventListener("click", function(event){
+        item.value = "";
+        desc.value = "";
+    });
 
-
-    function remove(el){
-        let element = el;
-        element.remove(el);
-    }
-
-    //console.log(thisuserlist)
 
     let wishtable = document.querySelector("table");
+    
     let eventlistener = function(){ 
         wishtable.addEventListener("click", function(event){
             event.preventDefault();
@@ -94,16 +104,14 @@ $(document).ready(function(){
                         thisuserlist.splice(i, 1);
                     }    
                 }
-                    console.log(thisuserlist)
-                    localStorage.setItem(userscope["email"], JSON.stringify(thisuserlist));
+                localStorage.setItem(userscope["email"], JSON.stringify(thisuserlist));
+                location.reload()
             }
             if(elemnetclicked.className === "fa fa-pencil-square-o"){
                 elemnetclicked.addEventListener("click", function(event){
                     selectedrow = elemnetclicked.parentNode.parentNode.parentNode;
-                    console.log(selectedrow);
-                    console.log(userobj)
                     let splititems = selectedrow.cells[0].innerHTML.split("-");
-                    console.log(splititems);
+
                     document.getElementById("item").value = splititems[0];
                     document.getElementById("desc").value = splititems[1];
                 })
