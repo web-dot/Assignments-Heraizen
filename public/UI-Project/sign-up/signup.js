@@ -1,8 +1,9 @@
 const inputs = document.querySelectorAll("input");
+let dob = document.getElementById("dateofbirth").value;
 
 const patterns = {
-    name : /^[a-z\d]{4,25}$/i,
-    //dateofbirth:/^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.]((19[0-9][0-9]|20[01][0-9]|2020))$/,
+    name : /^[a-z\d\s]{4,25}$/i,
+    dateofbirth:/^((19[0-9][0-9]|20[01][0-9]|2020))[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/,
     email:/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,6})$/,
     pass:/^[\w@-]{6,20}$/,
     repass:/^[\w@-]{6,20}$/
@@ -17,16 +18,38 @@ function validate(field, regex){
     }
 }
 
+let passarr = [];
+
 inputs.forEach((input) => {
     input.addEventListener('keyup', (e) => {
-        //console.log(e.target.attributes.name.value)
         validate(e.target, patterns[e.target.attributes.name.value]);
+        console.log(e.target.value);
+        let password = "";
+        let rpassword = "";
+        if(e.target.name == "pass"){
+            password = e.target.value;
+            passarr.push(password);
+        }
+        if(e.target.name == "repass"){
+            rpassword = e.target.value;
+            console.log(rpassword);
+            if(passarr[passarr.length-1] === rpassword){
+                console.log("repeat password match");
+                document.getElementById("rpasshelp").innerHTML= "repeat password match";
+                document.getElementById("rpasshelp").style.color= "green";
+                document.getElementById("rpasshelp").style.opacity= 1;
+            }
+            else{
+                console.log("repeat password not matching");
+                document.getElementById("rpasshelp").innerHTML= "repeat password not matching";
+                document.getElementById("rpasshelp").style.color= "rgb(121, 32, 0)";
+                document.getElementById("rpasshelp").style.opacity= 1;
+            }
+        }
     })
 })
 
-console.log(inputs.length);
 function checkClass(){
-    let retval = false;
     let retvalue = {
         value:false,
         name:""
@@ -46,28 +69,28 @@ function checkClass(){
     return retvalue;
 }
 
-
-
-
 let user = {
     name:"",
+    dob:"",
     email:"",
     pass:""
 };
-// let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
+
+
 $(document).ready(function(){
     $("form").submit(function(event){
         event.preventDefault();
+        console.log(dob);
         let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
         let cansubmit = checkClass().value;
         console.log(cansubmit);
-        let button = document.querySelector("button")
         if(cansubmit){
             let attrarr = $(this).serializeArray();
             console.log(attrarr);
             user["name"] = attrarr[0]["value"];
-            user["email"] = attrarr[1]["value"];
-            user["pass"] = attrarr[2]["value"]
+            user["dob"] = attrarr[1]["value"];
+            user["email"] = attrarr[2]["value"];
+            user["pass"] = attrarr[3]["value"]
             console.log(user);
             userarr.push(user)
             console.log(userarr);
@@ -82,13 +105,3 @@ $(document).ready(function(){
     })
     
 })
-
-
-
-
-// document.querySelector("form").addEventListener('submit', function(event){
-//     event.preventDefault();
-//     let name = document.getElementById("name").value;
-
-//     console.log(name);
-// })

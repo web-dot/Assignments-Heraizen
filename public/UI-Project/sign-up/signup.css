@@ -45,3 +45,8 @@ small{
   background-color: rgb(91, 152, 209);
   color: #fff;
 }
+
+#rpasshelp{
+  opacity: 0;
+  color: rgb(121, 32, 0);
+}
