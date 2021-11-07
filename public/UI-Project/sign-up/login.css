@@ -32,3 +32,6 @@ body{
   opacity: 0;
   color: rgb(121, 32, 0);
 }
+span,i{
+  color: rgb(121, 32, 0);
+}
