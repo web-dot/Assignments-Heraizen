@@ -55,7 +55,7 @@ inputs.forEach((input) => {
         userarr.forEach(user => {
             if(user["email"] == email){
                 document.getElementById("emailHelp").innerHTML = "this email is already registered, kindly login";
-                document.getElementById("emailHelp").style.color = "rgb(121, 32, 0)";
+                document.getElementById("emailHelp").style.color = "#36cc36";
                 document.getElementById("emailHelp").className = "form-text";
                 document.getElementById("email").className = "form-control invalid";
             }
