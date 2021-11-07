@@ -56,6 +56,8 @@ inputs.forEach((input) => {
             if(user["email"] == email){
                 document.getElementById("emailHelp").innerHTML = "this email is already registered, kindly login";
                 document.getElementById("emailHelp").style.color = "rgb(121, 32, 0)";
+                document.getElementById("emailHelp").className = "form-text";
+                document.getElementById("email").className = "form-control invalid";
             }
         })
     })
@@ -107,7 +109,7 @@ $(document).ready(function(){
             userarr.push(user)
             console.log(userarr);
             localStorage.setItem("users", JSON.stringify(userarr))
-            alert("you have successfully registered");
+            alert("You have successfully registered. Please sign-in to access the system");
             window.location.href = "welcome.html";
         }
         else{
