@@ -20,6 +20,14 @@
  overflow: hidden;
  background-color: rgb(255, 255, 255); 
  box-shadow: 0 4px 10px 0 #e0e0e0;
+ margin-top: 10px;
+}
+.navbar-ang
+{
+ overflow: hidden;
+ background-color: rgb(255, 98, 98); 
+ box-shadow: 0 4px 10px 0 #e0e0e0;
+ margin-top: 10px;
 }
 .navbar
 {
@@ -33,6 +41,9 @@
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
+}
+.navbar-ang a{
+  color: #ffff;
 }
 .navbar a.right
 {
