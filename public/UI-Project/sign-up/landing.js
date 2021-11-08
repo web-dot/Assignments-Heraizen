@@ -34,7 +34,7 @@ $(document).ready(function(){
     let nametag = document.querySelector("span");
     userarr.forEach(user => {
         if(user["email"] === userscope.email){  
-            nametag.innerHTML = "Hi " + user["name"];
+            nametag.innerHTML = " Hi " + user["name"];
         }
     })
 
@@ -44,6 +44,11 @@ $(document).ready(function(){
     form.addEventListener('submit', function(event){
         event.preventDefault();
         let listitem = getItem();
+        console.log(listitem);
+        if(listitem["name"] === ""){
+            alert("Oops you need to enter an item to add");
+        }
+        else{
         if(selectedrow == null){
             thisuserlist.push(listitem);
             display();
@@ -59,6 +64,7 @@ $(document).ready(function(){
             }
             localStorage.setItem(userscope["email"], JSON.stringify(thisuserlist))
         }
+    }
         //location.reload()
     })
 

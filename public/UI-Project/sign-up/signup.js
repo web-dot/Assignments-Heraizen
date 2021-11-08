@@ -20,7 +20,6 @@ function validate(field, regex){
 }
 
 let passarr = [];
-
 inputs.forEach((input) => {
     input.addEventListener('keyup', (e) => {
         validate(e.target, patterns[e.target.attributes.name.value]);
@@ -35,6 +34,7 @@ inputs.forEach((input) => {
             rpassword = e.target.value;
             console.log(rpassword);
             if(passarr[passarr.length-1] === rpassword){
+                document.getElementById("rpass").className = "form-control valid";
                 console.log("repeat password match");
                 document.getElementById("rpasshelp").innerHTML= "repeat password match";
                 document.getElementById("rpasshelp").style.color= "green";
@@ -60,8 +60,19 @@ inputs.forEach((input) => {
                 document.getElementById("email").className = "form-control invalid";
             }
         })
+        inputs.forEach(input => {
+            if(input.className === 'form-control valid' && passarr[passarr.length-1] === rpassword){
+                document.querySelector("button").disabled = false;
+            }
+            else{
+                document.querySelector("button").disabled = true;
+            }
+        })
     })
 })
+
+
+
 
 function checkClass(){
     let retvalue = {
@@ -96,9 +107,6 @@ $(document).ready(function(){
         event.preventDefault();
         console.log(dob);
         let userarr = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')):[];
-        let cansubmit = checkClass().value;
-        console.log(cansubmit);
-        if(cansubmit){
             let attrarr = $(this).serializeArray();
             console.log(attrarr);
             user["name"] = attrarr[0]["value"];
@@ -111,11 +119,6 @@ $(document).ready(function(){
             localStorage.setItem("users", JSON.stringify(userarr))
             alert("You have successfully registered. Please sign-in to access the system");
             window.location.href = "welcome.html";
-        }
-        else{
-            let badfield = checkClass().name;
-            alert(`kindly correct the ${badfield}`);
-        }
     })
     
 })

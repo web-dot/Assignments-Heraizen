@@ -26,13 +26,13 @@ $(document).ready(function(){
                 mailflag = true;
                 document.getElementById("emailHelp").style.opacity= 0;
                 if(userarr[i]["pass"] != pass){
-                    alert("check pass");
+                    //alert("check pass");
                     document.getElementById("passHelp").style.opacity= 1;
                 }
             }
         }
         if(mailflag == false){
-            alert("check email");
+            //alert("check email");
             document.getElementById("emailHelp").style.opacity= 1;
             document.getElementById("passHelp").style.opacity= 0;
         }
