@@ -1,46 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;900&family=Open+Sans+Condensed:ital,wght@1,300&family=Roboto:wght@300&family=Shrikhand&display=swap');
+
 .header
-{
-  background: rgb(201, 201, 201);
-  padding: 10px;
-  text-align: center;
+{ 
   color: white;
 }
 .header h1
 {
-  font-family: Arial;
-  font-size: 40px;
+  color: black;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
 }
-.header p
-{
-  font-family: Arial;
-  font-size: 20px;
+hr{
+  border: 0.01px solid rgba(0.230, 0.230, 0.230, 0.050);
 }
 .navbar
 {
  overflow: hidden;
  background-color: rgb(255, 255, 255); 
- box-shadow: 0 4px 10px 0 #e0e0e0;
- margin-top: 10px;
-}
-.navbar-ang
-{
- overflow: hidden;
- background-color: rgb(255, 98, 98); 
- box-shadow: 0 4px 10px 0 #e0e0e0;
- margin-top: 10px;
+ /* box-shadow: 0 4px 10px 0 #e0e0e0; */
+ margin-top: 30px;
+ border-radius: 30px;
+ border: 0.2px solid rgb(227, 227, 227);
 }
 .navbar
 {
-  font-family: Arial;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
 }
 .navbar a
 {
   float: left;
   display: block;
-  color: rgb(150, 150, 150);
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 14px 20px;
+  padding: 5px;
   text-decoration: none;
+  margin: 10px;
 }
 .navbar-ang a{
   color: #ffff;
@@ -51,8 +50,9 @@
 }
 .navbar a:hover
 {
-  background-color: #ddd;
+  border: 1px solid black;
   color: black;
+  border-radius: 30px;  
 }
 
 /* CSS Flexbox */
